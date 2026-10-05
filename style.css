@@ -1,0 +1,343 @@
+/* =====================================
+   SPENDWISE COLOR THEME
+===================================== */
+
+:root {
+    --brand-color: #2563eb;
+    --accent-color: #16a34a;
+    --surface-color: #f4f7fb;
+    --primary-text: #1f2937;
+    --secondary-text: #6b7280;
+}
+
+
+/* =====================================
+   BASIC SETTINGS
+===================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: var(--surface-color);
+    color: var(--primary-text);
+}
+
+
+/* =====================================
+   MAIN DASHBOARD - CSS GRID
+===================================== */
+
+.dashboard {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 240px 1fr;
+}
+
+
+/* =====================================
+   SIDEBAR - FLEXBOX
+===================================== */
+
+.sidebar {
+    background: var(--brand-color);
+    color: white;
+    padding: 24px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.navigation a {
+    color: white;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 8px;
+
+    transition: background-color 200ms ease;
+}
+
+.navigation a:hover,
+.navigation a:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+/* =====================================
+   MAIN AREA
+===================================== */
+
+.main-area {
+    min-width: 0;
+}
+
+
+/* =====================================
+   HEADER - FLEXBOX
+===================================== */
+
+.header {
+    background: white;
+    padding: 24px 32px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.header h1 {
+    margin: 0 0 6px;
+    font-size: 28px;
+}
+
+.header p {
+    margin: 0;
+    color: var(--secondary-text);
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+}
+
+.profile span {
+    color: var(--secondary-text);
+    font-size: 14px;
+}
+
+
+/* =====================================
+   CONTENT
+===================================== */
+
+.content {
+    padding: 32px;
+}
+
+.section-heading {
+    margin-bottom: 24px;
+}
+
+.section-heading h2 {
+    margin: 0 0 6px;
+}
+
+.section-heading p {
+    margin: 0;
+    color: var(--secondary-text);
+}
+
+
+/* =====================================
+   CATEGORY CARDS - CSS GRID
+===================================== */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+
+/* =====================================
+   CARD - FLEXBOX
+===================================== */
+
+.card {
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform 200ms ease,
+        box-shadow 200ms ease;
+
+    outline: none;
+}
+
+
+/* =====================================
+   CARD HOVER AND FOCUS
+===================================== */
+
+.card:hover,
+.card:focus {
+    transform: translateY(-4px);
+
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.14);
+}
+
+.card:focus-visible {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 3px;
+}
+
+
+/* =====================================
+   CARD ICON
+===================================== */
+
+.card-icon {
+    min-width: 55px;
+    height: 55px;
+
+    font-size: 32px;
+
+    background: var(--surface-color);
+
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =====================================
+   CARD CONTENT
+===================================== */
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.card-content h3 {
+    margin: 0;
+}
+
+.card-content p {
+    margin: 0;
+    color: var(--secondary-text);
+    font-size: 14px;
+}
+
+.card-content strong {
+    color: var(--accent-color);
+    font-size: 20px;
+}
+
+
+/* =====================================
+   JAVASCRIPT INFORMATION BOX
+===================================== */
+
+.javascript-info {
+    background: white;
+
+    margin-top: 30px;
+    padding: 24px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.javascript-info h2 {
+    margin-top: 0;
+}
+
+.javascript-info p {
+    color: var(--secondary-text);
+}
+
+
+/* =====================================
+   RESPONSIVE DESIGN
+===================================== */
+
+@media (max-width: 768px) {
+
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        padding: 16px;
+    }
+
+    .logo {
+        margin-bottom: 16px;
+    }
+
+    .navigation {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .navigation a {
+        padding: 8px 10px;
+    }
+
+    .header {
+        padding: 20px;
+
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .profile {
+        align-items: flex-start;
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =====================================
+   DARK THEME
+===================================== */
+
+@media (prefers-color-scheme: dark) {
+
+    :root {
+        --brand-color: #1d4ed8;
+        --accent-color: #22c55e;
+        --surface-color: #111827;
+        --primary-text: #f9fafb;
+        --secondary-text: #9ca3af;
+    }
+
+    .header,
+    .card,
+    .javascript-info {
+        background: #1f2937;
+    }
+
+    .header {
+        border-bottom-color: #374151;
+    }
+}
