@@ -1,40 +1,35 @@
 # SpendWise
 
-SpendWise is a simple budgeting dashboard that helps users understand their spending and manage their monthly budget.
+SpendWise is an interactive budgeting application that helps users track expenses, calculate their remaining balance, and understand their budget status.
 
-## JavaScript Concepts Implemented
+## Improvements Made This Week
 
-This project uses the following JavaScript concepts:
+This week, SpendWise was improved from a basic budgeting dashboard into an interactive application.
 
-- Variables
-- User input with `prompt()`
-- Number conversion with `Number()`
-- Arithmetic calculations
-- Functions
-- Return values
-- Console output with `console.log()`
+The main improvements include:
 
-## How Variables Are Used
+- Adding an expense form.
+- Adding expenses dynamically.
+- Using arrays to store multiple expense records.
+- Using loops to process expense records.
+- Using conditional statements to evaluate the budget.
+- Updating the dashboard dynamically using the DOM.
+- Using event listeners to respond to user actions.
+- Displaying expense records directly on the webpage.
 
-Variables are used to store important budgeting information.
+## Conditionals
 
-Examples include:
+Conditional statements are used to evaluate the user's budget.
 
-- `appName` stores the application name.
-- `budgetAmount` stores a default budget amount.
-- `expenseName` stores the name of an expense.
-- `expenseAmount` stores the expense amount.
-- `budget` stores the budget entered by the user.
-- `expense` stores the expense entered by the user.
+SpendWise checks the remaining balance and provides appropriate feedback.
 
-## How User Input Is Collected
-
-The JavaScript `prompt()` function is used to collect the user's budget and expense.
-
-The `Number()` function converts the entered values from text into numbers.
-
-Example:
+For example:
 
 ```javascript
-let budget = Number(prompt("Enter your budget:"));
-let expense = Number(prompt("Enter your expense:"));
+if (remainingBalance < 0) {
+    budgetStatus = "Over Budget";
+} else if (remainingBalance <= 5000) {
+    budgetStatus = "Warning: Budget is almost finished";
+} else {
+    budgetStatus = "Good: You are within your budget";
+}
