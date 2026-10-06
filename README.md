@@ -1,45 +1,40 @@
-# SpendWise Dashboard
+# SpendWise
 
-## Project Description
-
-SpendWise is a personal budgeting dashboard that helps users understand their monthly budget and expenses.
-
-The project uses HTML and CSS to create the dashboard interface and JavaScript to collect user input, store financial data, perform calculations, and display budget results in the browser console.
-
-The dashboard contains the following financial categories:
-
-- Food
-- Transport
-- Rent
-- Entertainment
-- Savings
-- Utilities
+SpendWise is a simple budgeting dashboard that helps users understand their spending and manage their monthly budget.
 
 ## JavaScript Concepts Implemented
 
-This project demonstrates the following JavaScript concepts:
+This project uses the following JavaScript concepts:
 
 - Variables
-- User input
-- `prompt()`
-- Number conversion
+- User input with `prompt()`
+- Number conversion with `Number()`
 - Arithmetic calculations
 - Functions
-- Function parameters
 - Return values
-- `console.log()`
+- Console output with `console.log()`
 
-## Variables
+## How Variables Are Used
 
-Variables are used to store the monthly budget, expenses, and savings.
+Variables are used to store important budgeting information.
 
-For example:
+Examples include:
+
+- `appName` stores the application name.
+- `budgetAmount` stores a default budget amount.
+- `expenseName` stores the name of an expense.
+- `expenseAmount` stores the expense amount.
+- `budget` stores the budget entered by the user.
+- `expense` stores the expense entered by the user.
+
+## How User Input Is Collected
+
+The JavaScript `prompt()` function is used to collect the user's budget and expense.
+
+The `Number()` function converts the entered values from text into numbers.
+
+Example:
 
 ```javascript
-let monthlyBudget = 30000;
-
-let foodExpense = 8500;
-
-let transportExpense = 4200;
-
-let rentExpense = 12000;
+let budget = Number(prompt("Enter your budget:"));
+let expense = Number(prompt("Enter your expense:"));

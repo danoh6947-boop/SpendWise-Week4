@@ -3,131 +3,85 @@
 // ========================================
 
 
-// ========================================
-// 1. STORE APPLICATION DATA
-// ========================================
+// STEP 2: STORE APPLICATION DATA
 
-// Monthly budget
-let monthlyBudget = 30000;
+const appName = "SpendWise";
 
-// Expense data
-let foodExpense = 8500;
-let transportExpense = 4200;
-let rentExpense = 12000;
-let entertainmentExpense = 3000;
-let utilitiesExpense = 2800;
+let budgetAmount = 50000;
 
-// Savings
-let savingsAmount = 6500;
+let expenseName = "Lunch";
+
+let expenseAmount = 500;
 
 
-// ========================================
-// 2. CALCULATE TOTAL EXPENSES
-// ========================================
+// STEP 3: COLLECT USER INPUT
 
-let totalExpenses =
-    foodExpense +
-    transportExpense +
-    rentExpense +
-    entertainmentExpense +
-    utilitiesExpense;
+let budget = Number(
+    prompt("Enter your budget:")
+);
+
+let expense = Number(
+    prompt("Enter your expense:")
+);
 
 
-// ========================================
-// 3. CREATE A REUSABLE FUNCTION
-// ========================================
+// STEP 4: CREATE REUSABLE FUNCTIONS
 
-function calculateRemainingBalance(budget, expenses) {
-
-    let remainingBalance = budget - expenses;
-
-    return remainingBalance;
+function calculateBalance(budget, expense) {
+    return budget - expense;
 }
 
 
-// ========================================
-// 4. CREATE A REPORT FUNCTION
-// ========================================
-
-function displayBudgetReport(budget, expenses, savings) {
-
-    let remainingBalance =
-        calculateRemainingBalance(budget, expenses);
-
-    console.log("================================");
-    console.log("       SPENDWISE BUDGET REPORT");
-    console.log("================================");
-
-    console.log("Monthly Budget: KSh " + budget);
-
-    console.log("Total Expenses: KSh " + expenses);
-
-    console.log("Savings: KSh " + savings);
-
-    console.log(
-        "Remaining Balance: KSh " + remainingBalance
-    );
-
-    console.log("================================");
+function calculateWeeklyBudget(monthlyBudget) {
+    return monthlyBudget / 4;
 }
 
 
-// ========================================
-// 5. COLLECT USER INPUT
-// ========================================
+// STEP 5: STORE RETURNED RESULTS
 
-let userBudget = prompt(
-    "Enter your monthly budget in Kenyan Shillings:"
+let balance = calculateBalance(
+    budget,
+    expense
+);
+
+let weeklyBudget = calculateWeeklyBudget(
+    budget
 );
 
 
-// ========================================
-// 6. CONVERT USER INPUT TO A NUMBER
-// ========================================
-
-userBudget = Number(userBudget);
-
-
-// ========================================
-// 7. CALCULATE USER'S REMAINING BALANCE
-// ========================================
-
-let userRemainingBalance =
-    calculateRemainingBalance(
-        userBudget,
-        totalExpenses
-    );
-
-
-// ========================================
-// 8. DISPLAY USER RESULTS
-// ========================================
-
-console.log("================================");
-console.log("       YOUR SPENDWISE RESULTS");
-console.log("================================");
+// STEP 6: DISPLAY RESULTS IN THE CONSOLE
 
 console.log(
-    "Your Budget: KSh " + userBudget
+    "Application:",
+    appName
 );
 
 console.log(
-    "Total Expenses: KSh " + totalExpenses
+    "Budget:",
+    budget
 );
 
 console.log(
-    "Remaining Balance: KSh " + userRemainingBalance
+    "Expense:",
+    expense
 );
 
-console.log("================================");
+console.log(
+    "Expense Name:",
+    expenseName
+);
 
+console.log(
+    "Expense Amount:",
+    expenseAmount
+);
 
-// ========================================
-// 9. DISPLAY APPLICATION REPORT
-// ========================================
+console.log(
+    "Remaining Balance:",
+    balance
+);
 
-displayBudgetReport(
-    monthlyBudget,
-    totalExpenses,
-    savingsAmount
+console.log(
+    "Weekly Budget:",
+    weeklyBudget
 );
